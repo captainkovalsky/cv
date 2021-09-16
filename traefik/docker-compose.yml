@@ -1,0 +1,16 @@
+services:
+  traefik:
+    container_name: traefik
+    image: traefik:latest
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/etc/traefik
+
+networks:
+  default:
+    external:
+      name: traefik
