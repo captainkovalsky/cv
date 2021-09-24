@@ -1,14 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { RouterProvider } from 'react-router5';
-import createRouter from 'router5';
+import ReactDOM from 'react-dom';
+import router from './router';
 
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-
-const router = createRouter()
 
 router.start(() => {
     ReactDOM.render(
