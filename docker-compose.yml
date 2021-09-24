@@ -1,14 +1,14 @@
+version: "3.9"
 services:
-  service_name: # change this
-    image: quay.io/vdzundza/cv:latest
-    ports:
-      - 3001:80
+  cv:
+    container_name: cv
+    build: .
+    restart: always
+    ports: [80]
     labels:
       - "traefik.http.routers.cv.rule=Host(`vdzundza.online`)"
       - "traefik.http.routers.cv.entrypoints=websecure" # name of 433 entrypoint
-      - "traefik.http.routers.cv.tls.certresolver=myresolver" # name of tls resolver
-      - "traefik.http.routers.cv.tls.domains[0].main=vdzundza.online"
-
+      - "traefik.http.routers.cv.tls=true"
 networks:
   default:
     external:

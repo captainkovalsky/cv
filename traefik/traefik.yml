@@ -1,23 +1,23 @@
 log:
-  level: DEBUG
-
+  level: WARN
+ping: {}
+accessLog: {}
 providers:
   docker: true
   file:
     filename: /etc/traefik/dynamic_conf.yml
+    watch: true
 
-entryPoints:
+api:
+  dashboard: true
+
+entrypoints:
   web:
-    address: ":80"
-
+    address: :80
+    http:
+      redirections:
+        entrypoint:
+          to: websecure
+          scheme: https
   websecure:
-    address: ":443"
-
-certificatesResolvers:
-  myresolver:
-    acme:
-      email: vdzundza@protonmail.com
-      storage: acme.json
-      httpChallenge:
-        # used during the challenge
-        entryPoint: web
+    address: :443

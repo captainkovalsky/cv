@@ -2,8 +2,9 @@ FROM node:latest as builder
 LABEL maintainer="Viktor Dzundza <vdzundza@protonmain.com>"
 ENV NODE_ENV=production
 WORKDIR /app
-COPY . ./
-RUN yarn install
+COPY . ./ 
+RUN yarn -v
+RUN yarn install 
 RUN yarn build
 
 FROM nginx:alpine

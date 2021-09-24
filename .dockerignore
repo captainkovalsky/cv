@@ -41,7 +41,13 @@ build/Release
 # Dependency directories
 node_modules/
 jspm_packages/
-
+.yarn/*
+!.yarn/cache
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
 # Snowpack dependency directory (https://snowpack.dev/)
 web_modules/
 
