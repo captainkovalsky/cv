@@ -4,7 +4,7 @@ services:
     container_name: cv
     build: .
     restart: always
-    ports: [80]
+    ports: ["80"]
     labels:
       - "traefik.http.routers.cv.rule=Host(`vdzundza.online`)"
       - "traefik.http.routers.cv.entrypoints=websecure" # name of 433 entrypoint
