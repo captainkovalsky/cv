@@ -1,8 +1,13 @@
 .root {
-  --height: 100px;
+  --height: 6.25rem;
+  @media only screen and (max-width: 600px) {
+    --height: 3.25rem;
+    justify-content: space-around;
+    flex-direction: column;
+  }
+
   display: flex;
   flex-direction: row;
-  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
   align-content: center;
@@ -12,8 +17,8 @@
 
   .item {
     display: flex;
-    padding: 0 46px;
-    font-size: 28px;
+    padding: 0 2.875rem;
+    font-size: 1.75rem;
     text-align: center;
     line-height: var(--height);
     cursor: pointer;
@@ -30,6 +35,13 @@
     &:hover {
       background-color: #f1e7e7;
       color: black;
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .item {
+      font-size: 1.35rem;
+      padding: 0 0.5rem;
     }
   }
 }
