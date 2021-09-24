@@ -17,6 +17,7 @@ const Navigation: React.FC<NavigationProps> = ({ activeRoute, routes }) => {
         .map((r: RouteDefinition): JSX.Element => {
           return (
             <Link
+              key={r.name}
               routeName={r.name}
               className={styles.item}
               activeClassName={styles.active}

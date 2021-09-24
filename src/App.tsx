@@ -13,7 +13,7 @@ function App() {
       <Navigation activeRoute={route} routes={routes} />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <p>Coming soon ... {route.name}</p>
+        <p>Coming soon ... {route.name !== "/" && route.name}</p>
       </header>
     </div>
   );
