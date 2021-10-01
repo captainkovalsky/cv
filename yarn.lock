@@ -10243,6 +10243,11 @@ route-node@4.1.1:
     search-params "3.0.0"
     tslib "^1.10.0"
 
+router5-helpers@^8.0.0:
+  version "8.0.0"
+  resolved "https://registry.yarnpkg.com/router5-helpers/-/router5-helpers-8.0.0.tgz#54b0fa34e4e00b8ffc4cfe5c1d4f853e1e6ba205"
+  integrity sha512-wmOMaPF6x6zJSdIjCWVGdcis4DO/kOxSJ2xhyVptd/7E/gPr55yrUO5jQSC18iZp7MLLmOlv/hr25JFaH5itMA==
+
 router5-plugin-browser@^8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/router5-plugin-browser/-/router5-plugin-browser-8.0.1.tgz#30a15fc59ed4d59020587cfc5452b5443b1a3290"

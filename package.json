@@ -17,6 +17,7 @@
     "react-router5": "8.0.1",
     "react-scripts": "^4.0.3",
     "router5": "8.0.1",
+    "router5-helpers": "^8.0.0",
     "router5-plugin-browser": "^8.0.1",
     "typescript": "4.4.3",
     "web-vitals": "2.1.0"
