@@ -1,3 +1,7 @@
 export default function CvPage() {
-  return <p>Coming soon ... cv</p>;
+  return (
+    <>
+      <p>Coming soon ... cv</p>
+    </>
+  );
 }
