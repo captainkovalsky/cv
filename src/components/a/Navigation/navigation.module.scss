@@ -8,7 +8,6 @@
   justify-content: center;
 
   height: var(--height);
-  background-color: #282c34;
 
   .item {
     display: flex;
@@ -17,19 +16,16 @@
     text-align: center;
     line-height: var(--height);
     cursor: pointer;
-    color: #ffe4e4;
     text-decoration: none;
     transition: color 0.25s ease;
     transition: background-color 0.75s ease;
 
     &.active {
-      background-color: #ffe4e4;
-      color: black;
+      background-color: #defeff;
     }
 
     &:hover {
-      background-color: #f1e7e7;
-      color: black;
+      background-color: #e7fff8;
     }
   }
 

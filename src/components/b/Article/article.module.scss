@@ -1,0 +1,23 @@
+.root {
+  margin-bottom: 28px;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row nowrap;
+
+  & > div {
+    max-width: 100%;
+  }
+  & > .left {
+    min-width: 256px;
+  }
+
+  &.tags {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  p {
+    word-break: break-word;
+    column-fill: balance;
+  }
+}
