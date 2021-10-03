@@ -5,14 +5,12 @@
   height: 34px;
 
   .external__on {
-    z-index: 3;
     position: absolute;
     top: 23%;
     opacity: 0;
   }
 
   .external__off {
-    z-index: 3;
     position: absolute;
     top: 23%;
     right: 5px;
@@ -20,7 +18,7 @@
   }
 
   .visible {
-    opacity: 1;
+    //opacity: 1;
   }
 
   input {
