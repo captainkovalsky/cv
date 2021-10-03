@@ -1,12 +1,5 @@
 export const Divider = () => {
-  return (
-    <hr
-      style={{
-        width: "900px",
-        marginLeft: " 256px",
-      }}
-    />
-  );
+  return <hr />;
 };
 
 export default Divider;

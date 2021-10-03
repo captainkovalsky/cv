@@ -17,13 +17,11 @@ function App() {
   return (
     <>
       <Navigation activeRoute={route} routes={routes} />
-      <main className={styles.flex}>
-        <div className={styles.mainContainer}>
-          {testRoute("cv") && <CvPage />}
-          {testRoute("about") && <AboutPage />}
-          {testRoute("consulting") && <ConsultingPage />}
-          {testRoute("contacts") && <ContactsPage />}
-        </div>
+      <main className={styles.mainContainer}>
+        {testRoute("cv") && <CvPage />}
+        {testRoute("about") && <AboutPage />}
+        {testRoute("consulting") && <ConsultingPage />}
+        {testRoute("contacts") && <ContactsPage />}
       </main>
     </>
   );

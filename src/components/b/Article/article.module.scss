@@ -4,6 +4,10 @@
   justify-content: space-around;
   flex-flow: row nowrap;
 
+  &.__small {
+    flex-direction: column;
+  }
+
   & > div {
     max-width: 100%;
   }

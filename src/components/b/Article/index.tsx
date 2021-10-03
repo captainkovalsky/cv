@@ -1,7 +1,8 @@
 import { FC, PropsWithChildren, useCallback } from "react";
-import styles from "./article.module.scss";
 
 import cls from "classnames";
+import { useBreakpoints } from "hooks/useBreakpoints";
+import styles from "./article.module.scss";
 
 type ArticleProps = PropsWithChildren<{
   title?: string | (() => JSX.Element);
@@ -21,8 +22,15 @@ export function Article({ title, className = "", children }: ArticleProps) {
     return <>{title()}</>;
   }, [title]);
 
+  const breakpoint = useBreakpoints();
+
   return (
-    <div className={cls(styles.root, className)} data-testid={"article"}>
+    <div
+      className={cls(styles.root, className, {
+        [styles.__small]: breakpoint.lessThan("md"),
+      })}
+      data-testid={"article"}
+    >
       {renderTitle()}
       {children}
     </div>

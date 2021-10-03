@@ -10,7 +10,7 @@ import styles from "./cv.module.scss";
 export default function CvPage() {
   return (
     <div className={styles.root}>
-      <Grid direction="column">
+      <Grid direction={"column"}>
         <Article>
           <Article.Left>
             <DateCmp>Sep 2015 &mdash; Sep 2016</DateCmp>
