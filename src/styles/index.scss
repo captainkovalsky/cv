@@ -1,12 +1,32 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto:ital,wght@0,100;1,100;1,500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400&display=swap");
 
+@import "colors.scss";
+
 body {
-  background-color: #f5f5f5;
-  color: black;
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   font-family: "Montserrat";
   font-family: "Montserrat", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+body.dark-theme {
+  --background-color: #{$black-color};
+  --text-color: #{$white-color};
+  --menu-hover-bg-color: #{$gray-light};
+  --menu-active-bg-color: #{$gray-light};
+  --menu-bottom-color: #{$menu-bottom-dark-color};
+  --menu-active-text-color: #{$black-color};
+}
+
+body.light-theme {
+  --background-color: #{$white-color};
+  --text-color: #{$black-color};
+  --menu-hover-bg-color: #{$gray-color};
+  --menu-active-bg-color: #{$gray-color};
+  --menu-bottom-color: #{$menu-bottom-color};
+  --menu-active-text-color: #{$white-color};
 }

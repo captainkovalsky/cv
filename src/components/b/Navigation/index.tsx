@@ -3,6 +3,8 @@ import { State } from "router5";
 import { Link } from "react-router5";
 import { RouteDefinition } from "../../../router";
 import styles from "./navigation.module.scss";
+import ToggleSwitch from "../../a/ToggleSwitch";
+import useTheme from "../../../hooks/useTheme";
 
 type NavigationProps = {
   activeRoute: State;
@@ -10,6 +12,7 @@ type NavigationProps = {
 };
 
 const Navigation: React.FC<NavigationProps> = ({ activeRoute, routes }) => {
+  const { setTheme, theme } = useTheme();
   return (
     <nav className={styles.root}>
       {routes
@@ -26,6 +29,27 @@ const Navigation: React.FC<NavigationProps> = ({ activeRoute, routes }) => {
             </Link>
           );
         })}
+      <div
+        style={{
+          position: "absolute",
+          right: "15px",
+          top: "25px",
+        }}
+      >
+        <ToggleSwitch
+          rounded={true}
+          value={theme === "dark"}
+          onContent={() => <span>🌜</span>}
+          offContent={() => <span>🌞</span>}
+          onChange={(checked) => {
+            if (checked) {
+              setTheme("dark");
+            } else {
+              setTheme("light");
+            }
+          }}
+        />
+      </div>
     </nav>
   );
 };

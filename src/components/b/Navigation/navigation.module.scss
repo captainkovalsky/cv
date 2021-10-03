@@ -1,7 +1,7 @@
 .root {
-  box-shadow: 0 1px 5px 0px rgba(34, 60, 80, 0.05);
+  box-shadow: 0 1px 5px 0px var(--menu-bottom-color);
 
-  --height: 6.25rem;
+  --height: 5.25rem;
   @media only screen and (max-width: 600px) {
     --height: 3.25rem;
   }
@@ -21,13 +21,16 @@
     text-decoration: none;
     transition: color 0.25s ease;
     transition: background-color 0.75s ease;
+    color: var(--text-color);
 
-    &.active {
-      background-color: #defeff;
+    &.active,
+    &:active {
+      background-color: var(--menu-active-bg-color);
+      color: var(--menu-active-text-color);
     }
-
     &:hover {
-      background-color: #e7fff8;
+      background-color: var(--menu-hover-bg-color);
+      color: var(--menu-active-text-color);
     }
   }
 
