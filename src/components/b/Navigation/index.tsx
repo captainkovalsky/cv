@@ -32,8 +32,8 @@ const Navigation: React.FC<NavigationProps> = ({ activeRoute, routes }) => {
       <div
         style={{
           position: "absolute",
-          right: "15px",
-          top: "25px",
+          right: "1rem",
+          top: "0.75rem",
         }}
       >
         <ToggleSwitch

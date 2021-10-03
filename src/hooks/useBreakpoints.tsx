@@ -12,6 +12,12 @@ export const BREAKPOINTS = {
 export const useBreakpoints = () => {
   const [screen, setScreen] = useState("md");
 
+  useEffect(() => {
+    if (document.body.clientWidth < 768) {
+      setScreen("sm");
+    }
+  }, []);
+
   const keys = useMemo(() => Object.keys(BREAKPOINTS), []);
 
   const lessThan = useCallback(
