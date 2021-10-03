@@ -1,53 +1,11 @@
+import Company from "components/a/Company";
+import CvTitle from "components/a/CvTitle";
+import DateCmp from "components/a/DateCmp";
+import Divider from "components/a/Divider";
 import Grid from "components/a/Grid";
+import IconStack from "components/a/IconStack";
 import Article from "components/b/Article";
-import { PropsWithChildren } from "react";
 import styles from "./cv.module.scss";
-
-export const IconStack: React.FC<PropsWithChildren<{}>> = ({ children }) => {
-  return <span className={styles.iconRoot}>{children}</span>;
-};
-
-const Divider = () => {
-  return (
-    <hr
-      style={{
-        width: "600px",
-        marginLeft: " 256px",
-      }}
-    />
-  );
-};
-
-const Date = ({ children }: PropsWithChildren<{}>) => {
-  return <p style={{ fontWeight: "bold" }}>{children}</p>;
-};
-
-type CompanyProps = {
-  name: string;
-  city?: string;
-  link?: string;
-};
-const Company = (props: CompanyProps) => {
-  const { name, city, link } = props;
-
-  return (
-    <p>
-      <a href={link}>{name}</a>, {city}
-    </p>
-  );
-};
-
-type CvTitleProps = {
-  title: string;
-  project?: string;
-};
-const CvTitle = (props: CvTitleProps) => {
-  return (
-    <p>
-      <b>{props.title}</b>, {props.project}
-    </p>
-  );
-};
 
 export default function CvPage() {
   return (
@@ -55,7 +13,7 @@ export default function CvPage() {
       <Grid direction="column">
         <Article>
           <Article.Left>
-            <Date>Sep 2015 &mdash; Sep 2016</Date>
+            <DateCmp>Sep 2015 &mdash; Sep 2016</DateCmp>
             <Company link={"//epam.com"} name={"EPAM Systems"} city={"Kyiv"} />
           </Article.Left>
           <Article.Right>
@@ -83,7 +41,7 @@ export default function CvPage() {
         <Divider />
         <Article>
           <Article.Left>
-            <Date>Sep-2015 &mdash; Sep 2016</Date>
+            <DateCmp>Sep 2015 &mdash; Sep 2016</DateCmp>
             <Company link={"//epam.com"} name={"EPAM Systems"} city={"Kyiv"} />
           </Article.Left>
           <Article.Right>
@@ -116,7 +74,7 @@ export default function CvPage() {
 
         <Article>
           <Article.Left>
-            <Date>Sep-2015 – Sep 2016</Date>
+            <DateCmp>Sep 2015 &mdash; Sep 2016</DateCmp>
             <Company link={"//epam.com"} name={"EPAM Systems"} city={"Kyiv"} />
           </Article.Left>
           <Article.Right>

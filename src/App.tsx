@@ -6,8 +6,8 @@ import CvPage from "./pages/cv";
 import ConsultingPage from "./pages/consulting";
 import ContactsPage from "./pages/contacts";
 import AboutPage from "./pages/about";
-import "./styles/normalize.css";
-import "./index.scss";
+// import "./styles/normalize.css";
+import "./styles/index.scss";
 import styles from "./App.module.scss";
 
 function App() {
