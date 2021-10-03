@@ -1,4 +1,4 @@
-import { FC, PropsWithChildren, useCallback } from "react";
+import { PropsWithChildren, useCallback } from "react";
 
 import cls from "classnames";
 import { useBreakpoints } from "hooks/useBreakpoints";

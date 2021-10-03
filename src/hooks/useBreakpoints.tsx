@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 
 export const BREAKPOINTS = {
   xs: "0px",
@@ -12,7 +12,7 @@ export const BREAKPOINTS = {
 export const useBreakpoints = () => {
   const [screen, setScreen] = useState("md");
 
-  const keys = useMemo(() => Object.keys(BREAKPOINTS), [BREAKPOINTS]);
+  const keys = useMemo(() => Object.keys(BREAKPOINTS), []);
 
   const lessThan = useCallback(
     (breakpoint: string): boolean => {
@@ -20,7 +20,7 @@ export const useBreakpoints = () => {
       const screenIndex = keys.findIndex((k) => k === screen);
       return screenIndex < breakpointIndex;
     },
-    [screen]
+    [screen, keys]
   );
 
   const mediaQueries: MediaQueryList[] = useMemo(

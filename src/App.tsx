@@ -6,7 +6,6 @@ import CvPage from "./pages/cv";
 import ConsultingPage from "./pages/consulting";
 import ContactsPage from "./pages/contacts";
 import AboutPage from "./pages/about";
-// import "./styles/normalize.css";
 import "./styles/index.scss";
 import styles from "./App.module.scss";
 
@@ -17,9 +16,9 @@ function App() {
   return (
     <>
       <Navigation activeRoute={route} routes={routes} />
-      <main className={styles.mainContainer}>
-        {testRoute("cv") && <CvPage />}
+      <main className={styles.container}>
         {testRoute("about") && <AboutPage />}
+        {testRoute("cv") && <CvPage />}
         {testRoute("consulting") && <ConsultingPage />}
         {testRoute("contacts") && <ContactsPage />}
       </main>
