@@ -1,6 +1,5 @@
 import styles from "./about.module.scss";
 
-console.log("styles", styles);
 export default function AboutPage() {
   return (
     <>

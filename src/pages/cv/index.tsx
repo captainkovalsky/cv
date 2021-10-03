@@ -1,7 +1,6 @@
 import Company from "components/a/Company";
 import CvTitle from "components/a/CvTitle";
 import DateCmp from "components/a/DateCmp";
-import Divider from "components/a/Divider";
 import Grid from "components/a/Grid";
 import IconStack from "components/a/IconStack";
 import Article from "components/b/Article";
@@ -10,14 +9,12 @@ import styles from "./cv.module.scss";
 
 export default function CvPage() {
   const experience = cv.experience;
-
-  console.log(experience);
   return (
     <div className={styles.root}>
       <Grid direction={"column"}>
-        {experience.map((exp: any) => {
+        {experience.map((exp: any, index: number) => {
           return (
-            <Article>
+            <Article key={index}>
               <Article.Left>
                 <DateCmp>
                   {exp.startDate} &mdash;{" "}
@@ -27,13 +24,13 @@ export default function CvPage() {
               </Article.Left>
               <Article.Right>
                 <CvTitle title={exp.role} project={exp.project} />
-                {exp.responsibilities.map((text: string) => (
-                  <p>{text}</p>
+                {exp.responsibilities.map((text: string, index: number) => (
+                  <p key={index}>{text}</p>
                 ))}
 
                 <div>
                   {exp.stack.map((s: string) => (
-                    <IconStack>{s}</IconStack>
+                    <IconStack key={s}>{s}</IconStack>
                   ))}
                 </div>
               </Article.Right>
