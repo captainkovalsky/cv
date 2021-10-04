@@ -2,9 +2,9 @@ import React from "react";
 import { State } from "router5";
 import { Link } from "react-router5";
 import { RouteDefinition } from "../../../router";
-import styles from "./navigation.module.scss";
 import ToggleSwitch from "../../a/ToggleSwitch";
 import useTheme from "../../../hooks/useTheme";
+import styles from "./navigation.module.scss";
 
 type NavigationProps = {
   activeRoute: State;

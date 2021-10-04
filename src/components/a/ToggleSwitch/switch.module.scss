@@ -3,6 +3,11 @@
   display: inline-block;
   width: 60px;
   height: 34px;
+  opacity: 0;
+
+  &.visible {
+    opacity: 1;
+  }
 
   .external__on {
     position: absolute;

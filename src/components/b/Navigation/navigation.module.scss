@@ -19,8 +19,6 @@
     line-height: var(--height);
     cursor: pointer;
     text-decoration: none;
-    transition: color 0.25s ease;
-    transition: background-color 0.75s ease;
     color: var(--text-color);
 
     &.active,

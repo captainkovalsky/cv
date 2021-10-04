@@ -28,7 +28,7 @@ export default function CvPage() {
                   <p key={index}>{text}</p>
                 ))}
 
-                <div style={{maxWidth: '34rem'}}>
+                <div style={{ maxWidth: "34rem" }}>
                   {exp.stack.map((s: string) => (
                     <IconStack key={s}>{s}</IconStack>
                   ))}

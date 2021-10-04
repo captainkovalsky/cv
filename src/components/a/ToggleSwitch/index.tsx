@@ -12,15 +12,22 @@ type ToggleSwitchProps = {
 export const ToggleSwitch = (props: ToggleSwitchProps) => {
   const ref = useRef<HTMLElement | null>(null);
   const [on, setOn] = useState(props.value ?? false);
+  const [, rerender] = useState(false);
 
   useEffect(() => {
     if (ref.current && props.value) {
       (ref.current as any).checked = props.value;
     }
+    setTimeout(() => {
+      rerender(true);
+    }, 500);
   }, [props.value]);
+
   return (
     <label
-      className={styles.root}
+      className={cls(styles.root, {
+        [styles.visible]: !!ref.current,
+      })}
       onChange={(e: any) => {
         const value = !!e.target.checked;
         if (props.onChange) {
