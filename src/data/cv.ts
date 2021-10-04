@@ -1,4 +1,4 @@
-export default {
+const cv = {
   name: "Viktor",
   surname: "Dzundza",
   contacts: {
@@ -9,7 +9,7 @@ export default {
     github: "https://github.com/captainkovalsky",
   },
   summary: [
-    "I've been working as web developer since 2012",
+    "I've been working as web Engineer since 2012",
     " Developed the projects with different areas such as E-Commerce, online training system,nTicketing system etc.n        ",
     " Experienced in front end development technologies including advanced HTML5, CSS3, JavaScript (cross-browser compatibility, AJAX)n        ",
     " Opened for new ideas and approaches in development, also I agree to use modern web frameworks such as Vue, dojo2.n        ",
@@ -36,7 +36,7 @@ export default {
         "CSS",
         "CSS-in-JS",
         "Javascript",
-        "node",
+        "NodeJS",
         "GraphQL",
         "Relay",
         "REST",
@@ -67,7 +67,7 @@ export default {
         "CSS",
         "CSS-in-JS",
         "Javascript",
-        "node",
+        "NodeJS",
         "GraphQL",
         "REST",
         "Typescript",
@@ -95,13 +95,13 @@ export default {
       qaSize: 1,
       stack: [
         "React",
-        "React saga",
+        "React Saga",
         "Redux",
         "HTML",
         "CSS",
         "CSS-in-JS",
         "Javascript",
-        "node",
+        "NodeJS",
         "REST",
         "hapi",
         "express",
@@ -145,7 +145,7 @@ export default {
     {
       startDate: "2018-03-01",
       endDate: "2018-06-30",
-      role: "Senior Backend Developer",
+      role: "Senior Backend Engineer",
       project: "AirMap",
       company: "Intellias",
       city: "Lviv",
@@ -162,7 +162,7 @@ export default {
         "Fish",
         "YAML",
         "REST",
-        "node",
+        "NodeJS",
         "Auth0",
         "Docker",
         "CircleCI",
@@ -426,7 +426,7 @@ export default {
       qaSize: 1,
       stack: [
         "Javascript",
-        "Node",
+        "NodeJS",
         "Bootstrap",
         "Jquery",
         "AJAX",
@@ -443,7 +443,7 @@ export default {
     {
       startDate: "2014-04-01",
       endDate: "2014-09-30",
-      role: "Fullstack Engineer",
+      role: "Junior Fullstack Engineer",
       city: "Ivano-Frankivsk",
 
       project: "MicroSpec Systems Inc",
@@ -476,7 +476,7 @@ export default {
     {
       startDate: "2013-07-01",
       endDate: "2014-01-02",
-      role: "Fullstack Engineer",
+      role: "Junior Fullstack Engineer",
       city: "Ivano-Frankivsk",
 
       project: "PlayFitness",
@@ -539,7 +539,7 @@ export default {
     {
       startDate: "2012-03-01",
       endDate: "2013-07-01",
-      role: "Intern Developer",
+      role: "Intern Engineer",
       project: "hachup au",
       city: "Ivano-Frankivsk",
       company: "Eleks, bvb logic",
@@ -597,3 +597,5 @@ export default {
     },
   },
 };
+
+export default cv;

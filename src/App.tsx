@@ -17,7 +17,7 @@ function App() {
   const { name } = route;
   const testRoute = startsWithSegment(name);
   const [theme, setTheme] = useState<string>(
-    localStorage.getItem("theme") ?? "light"
+    localStorage.getItem("theme") ?? "dark"
   );
 
   useEffect(() => {

@@ -14,15 +14,18 @@ const orientationMedia = window.matchMedia(`(orientation: landscape)`);
 export const useBreakpoints = () => {
   const [screen, setScreen] = useState("md");
   const [isLandscape, setIsLandscape] = useState(false);
-  const changeOrientation = (event: MediaQueryListEvent) => {
-    if (event.matches) {
-      if (!isLandscape) {
-        setIsLandscape(true);
+  const changeOrientation = useCallback(
+    (event: MediaQueryListEvent) => {
+      if (event.matches) {
+        if (!isLandscape) {
+          setIsLandscape(true);
+        }
+      } else if (isLandscape) {
+        setIsLandscape(false);
       }
-    } else if (isLandscape) {
-      setIsLandscape(false);
-    }
-  };
+    },
+    [isLandscape, setIsLandscape]
+  );
   useEffect(() => {
     if (document.body.clientWidth < 768) {
       setScreen("sm");
@@ -33,7 +36,7 @@ export const useBreakpoints = () => {
     return () => {
       orientationMedia.removeEventListener("change", changeOrientation);
     };
-  }, []);
+  }, [changeOrientation]);
 
   const lessThan = useCallback(
     (breakpoint: string): boolean => {
@@ -41,7 +44,7 @@ export const useBreakpoints = () => {
       const screenIndex = keys.findIndex((k) => k === screen);
       return screenIndex < breakpointIndex;
     },
-    [screen, keys]
+    [screen]
   );
 
   const mediaQueries: MediaQueryList[] = useMemo(
@@ -51,7 +54,7 @@ export const useBreakpoints = () => {
         (media as any).type = size;
         return media;
       }),
-    [keys]
+    []
   );
 
   useEffect(() => {
