@@ -1,7 +1,6 @@
 import Company from "components/a/Company";
 import CvTitle from "components/a/CvTitle";
 import DateCmp from "components/a/DateCmp";
-import Grid from "components/a/Grid";
 import IconStack from "components/a/IconStack";
 import Article from "components/b/Article";
 import cv from "data/cv";
@@ -11,7 +10,7 @@ export default function CvPage() {
   const experience = cv.experience;
   return (
     <div className={styles.root}>
-      <Grid direction={"column"}>
+      <div className={styles.wrapper}>
         {experience.map((exp: any, index: number) => {
           return (
             <Article key={index}>
@@ -29,7 +28,7 @@ export default function CvPage() {
                   ></p>
                 ))}
 
-                <div style={{ maxWidth: "34rem" }}>
+                <div style={{}}>
                   {exp.stack.map((s: string) => (
                     <IconStack key={s}>{s}</IconStack>
                   ))}
@@ -38,7 +37,7 @@ export default function CvPage() {
             </Article>
           );
         })}
-      </Grid>
+      </div>
     </div>
   );
 }

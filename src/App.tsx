@@ -26,6 +26,7 @@ function App() {
       document.body.classList.remove("dark-theme", "light-theme");
     };
   }, [theme]);
+
   return (
     <ThemeContext.Provider
       value={{

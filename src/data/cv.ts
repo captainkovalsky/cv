@@ -511,7 +511,7 @@ export default {
       role: "Junior Fullstack Engineer",
       project: "TennisTours",
       city: "Ivano-Frankivsk",
-      company: "Letzgro (former Lezgro)",
+      company: "Letzgro (Lezgro)",
       isIntern: true,
       companyLogo:
         "https://media-exp1.licdn.com/dms/image/C510BAQGsPqz3OS_5Ng/company-logo_200_200/0?e=1604534400&v=beta&t=_sLSmIRyvRWX-VbPbQR9igfjn-jz-EVuly5vgs7lNxo",

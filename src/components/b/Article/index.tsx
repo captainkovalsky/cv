@@ -1,5 +1,4 @@
 import { PropsWithChildren, useCallback } from "react";
-
 import cls from "classnames";
 import { useBreakpoints } from "hooks/useBreakpoints";
 import styles from "./article.module.scss";
@@ -27,7 +26,7 @@ export function Article({ title, className = "", children }: ArticleProps) {
   return (
     <div
       className={cls(styles.root, className, {
-        [styles.__small]: breakpoint.lessThan("md"),
+        [styles.__small]: breakpoint.isLandscape || breakpoint.lessThan("md"),
       })}
       data-testid={"article"}
     >
