@@ -16,6 +16,7 @@ body {
 body.dark-theme {
   --background-color: #{$black-color};
   --text-color: #{$white-color};
+  --text-stack-icon-color: #{$violet-color};
   --menu-hover-bg-color: #{$gray-light};
   --menu-active-bg-color: #{$gray-light};
   --menu-bottom-color: #{$menu-bottom-dark-color};
@@ -25,8 +26,9 @@ body.dark-theme {
 body.light-theme {
   --background-color: #{$white-color};
   --text-color: #{$black-color};
-  --menu-hover-bg-color: #{$gray-color};
-  --menu-active-bg-color: #{$gray-color};
+  --text-stack-icon-color: #818181;
+  --menu-hover-bg-color: #{$violet-color};
+  --menu-active-bg-color: #{$violet-color};
   --menu-bottom-color: #{$menu-bottom-color};
   --menu-active-text-color: #{$white-color};
 }
