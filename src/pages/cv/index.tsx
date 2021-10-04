@@ -16,10 +16,7 @@ export default function CvPage() {
           return (
             <Article key={index}>
               <Article.Left>
-                <DateCmp>
-                  {exp.startDate} &mdash;{" "}
-                  {exp.endDate ? exp.endDate : "present"}
-                </DateCmp>
+                <DateCmp startDate={exp.startDate} endDate={exp.endDate} />
                 <Company name={exp.company} city={exp.city} />
               </Article.Left>
               <Article.Right>
