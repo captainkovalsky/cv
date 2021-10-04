@@ -4,7 +4,7 @@ import DateCmp from "components/a/DateCmp";
 import Grid from "components/a/Grid";
 import IconStack from "components/a/IconStack";
 import Article from "components/b/Article";
-import cv from "data/cv.json";
+import cv from "data/cv";
 import styles from "./cv.module.scss";
 
 export default function CvPage() {
@@ -25,7 +25,11 @@ export default function CvPage() {
               <Article.Right>
                 <CvTitle title={exp.role} project={exp.project} />
                 {exp.responsibilities.map((text: string, index: number) => (
-                  <p key={index}>{text}</p>
+                  <p
+                    key={index}
+                    className={styles.description}
+                    dangerouslySetInnerHTML={{ __html: text }}
+                  ></p>
                 ))}
 
                 <div style={{ maxWidth: "34rem" }}>
