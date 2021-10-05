@@ -25,6 +25,13 @@
   </head>
 
   <body>
+    <script>
+      const theme = localStorage.getItem("theme");
+      if (!theme) {
+        localStorage.setItem("theme", "dark"); //default theme
+      }
+      document.body.className = `${theme}-theme`;
+    </script>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
     <!--
