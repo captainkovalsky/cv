@@ -1,6 +1,13 @@
 .root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @media screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   margin-top: 1rem;
+
+  .print {
+    position: fixed;
+    left: 5px;
+  }
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router5";
 import { RouteDefinition } from "../../../router";
 import ToggleSwitch from "../../a/ToggleSwitch";
 import useTheme from "../../../hooks/useTheme";
+
 import styles from "./navigation.module.scss";
 
 type NavigationProps = {

@@ -206,6 +206,7 @@ const cv = {
       responsibilities: [
         `Involved into migration the current project into monorepo`,
       ],
+      break: true,
     },
     {
       startDate: "2016-09-01",

@@ -1,17 +1,17 @@
 .root {
   margin-bottom: 1.75rem;
-  // border: 1px solid red;
-  display: flex;
-  justify-content: flex-start;
-  flex-flow: row nowrap;
+
+  @media screen {
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: row nowrap;
+  }
 
   .right {
-    // border: 1px solid green;
     max-width: 50rem;
   }
 
   .left {
-    // border: 1px solid yellow;
     min-width: 13rem;
     margin-right: 2rem;
   }
@@ -28,5 +28,20 @@
   p {
     word-break: break-word;
     column-fill: balance;
+  }
+
+  @media print {
+    .left {
+      display: inline-block;
+      vertical-align: top;
+      margin-right: 0;
+      min-width: 12rem !important;
+      max-width: 20% !important;
+    }
+
+    .right {
+      display: inline-block;
+      max-width: 70%;
+    }
   }
 }

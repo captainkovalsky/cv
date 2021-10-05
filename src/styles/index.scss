@@ -17,6 +17,8 @@ body.dark-theme {
   --background-color: #{$black-color};
   --text-color: #{$white-color};
   --text-stack-icon-color: #{$violet-color};
+  --button-background-color: #{$violet-color};
+  --button-text-color: #{$white-color};
   --menu-hover-bg-color: #{$gray-light};
   --menu-active-bg-color: #{$gray-light};
   --menu-bottom-color: #{$menu-bottom-dark-color};
@@ -27,19 +29,33 @@ body.light-theme {
   --background-color: #{$white-color};
   --text-color: #{$black-color};
   --text-stack-icon-color: #818181;
+  --button-background-color: #{$violet-color};
+  --button-text-color: #{$white-color};
+
   --menu-hover-bg-color: #{$violet-color};
   --menu-active-bg-color: #{$violet-color};
   --menu-bottom-color: #{$menu-bottom-color};
   --menu-active-text-color: #{$white-color};
 }
 
+@media screen {
+  [data-only-print] {
+    display: none !important;
+  }
+}
+
 @media print {
   @page {
     margin: 1rem;
   }
+
+  .pagebreak {
+    break-after: always;
+  }
+
   * {
-    background-color: whitesmoke;
-    color: black !important;
+    background-color: whitesmoke !important;
+    color: black;
   }
 
   [data-no-print] {
