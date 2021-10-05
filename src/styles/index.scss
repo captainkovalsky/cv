@@ -32,3 +32,21 @@ body.light-theme {
   --menu-bottom-color: #{$menu-bottom-color};
   --menu-active-text-color: #{$white-color};
 }
+
+@media print {
+  @page {
+    margin: 1rem;
+  }
+  * {
+    background-color: whitesmoke;
+    color: black !important;
+  }
+
+  [data-no-print] {
+    display: none !important;
+  }
+
+  [data-only-print] {
+    display: initial !important;
+  }
+}

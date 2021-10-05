@@ -28,7 +28,7 @@ export default function CvPage() {
                   ></p>
                 ))}
 
-                <div style={{}}>
+                <div style={{}} data-no-print>
                   {exp.stack.map((s: string) => (
                     <IconStack key={s}>{s}</IconStack>
                   ))}

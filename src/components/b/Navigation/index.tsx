@@ -14,7 +14,7 @@ type NavigationProps = {
 const Navigation: React.FC<NavigationProps> = ({ activeRoute, routes }) => {
   const { setTheme, theme } = useTheme();
   return (
-    <nav className={styles.root}>
+    <nav className={styles.root} data-no-print>
       {routes
         .filter((r) => r.visible !== false)
         .map((r: RouteDefinition): JSX.Element => {

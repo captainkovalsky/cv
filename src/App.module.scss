@@ -6,4 +6,8 @@
     padding: 0.5rem 0.75rem;
     max-width: 95%;
   }
+
+  @media print {
+    max-width: 95%;
+  }
 }

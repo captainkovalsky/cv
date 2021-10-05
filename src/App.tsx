@@ -38,12 +38,13 @@ function App() {
       }}
     >
       <Navigation activeRoute={route} routes={routes} />
-      <main className={styles.container}>
+      <main data-no-print className={styles.container}>
         {testRoute("about") && <AboutPage />}
         {testRoute("cv") && <CvPage />}
         {testRoute("consulting") && <ConsultingPage />}
         {testRoute("contacts") && <ContactsPage />}
       </main>
+      <div data-only-print>Версія для друку в розробці</div>
     </ThemeContext.Provider>
   );
 }
