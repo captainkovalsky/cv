@@ -16,7 +16,7 @@ export const Button: React.FC<ButtonProps> = (props: ButtonProps) => {
       !!variant && styles[variant],
       !!size && styles[size]
     );
-  }, [variant, size]);
+  }, [variant, size, className]);
 
   return (
     <button className={buttonStyles} {...rest}>

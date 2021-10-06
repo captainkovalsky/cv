@@ -37,6 +37,12 @@ function App() {
         },
       }}
     >
+      <div
+        id="navigation-portal"
+        style={{
+          position: "absolute",
+        }}
+      ></div>
       <Navigation activeRoute={route} routes={routes} />
       <main className={styles.container}>
         {testRoute("about") && <AboutPage />}

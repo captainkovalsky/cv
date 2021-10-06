@@ -5,11 +5,10 @@
     align-items: center;
   }
   margin-top: 1rem;
+}
 
-  .print {
-    position: fixed;
-    right: 5px;
-
-    
-  }
+.print {
+  position: absolute;
+  left: 0.2rem;
+  top: 0.2rem;
 }
