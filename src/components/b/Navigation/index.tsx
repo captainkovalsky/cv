@@ -1,4 +1,4 @@
-import React from "react";
+import { FC } from "react";
 import { State } from "router5";
 import { Link } from "react-router5";
 import { RouteDefinition } from "../../../router";
@@ -12,7 +12,7 @@ type NavigationProps = {
   routes: RouteDefinition[];
 };
 
-const Navigation: React.FC<NavigationProps> = ({ activeRoute, routes }) => {
+const Navigation: FC<NavigationProps> = ({ activeRoute, routes }) => {
   const { setTheme, theme } = useTheme();
   return (
     <nav className={styles.root} data-no-print>
