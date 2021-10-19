@@ -8,7 +8,9 @@ ssh $USER@$IP_ADDRESS << EOF
   git fetch --all;
   git reset --hard origin/main;
   echo "DEPLOY $(git rev-parse --short HEAD)";
+  cd scripts;
   docker-compose build;
   docker-compose down;
   docker-compose up -d;
+  cd -;
 EOF
