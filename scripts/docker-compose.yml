@@ -2,7 +2,8 @@ version: "3.9"
 services:
   cv:
     container_name: cv
-    build: .
+    build: ../
+    dockerfile: scripts/Dockerfile
     restart: always
     ports: ["80"]
     labels:
