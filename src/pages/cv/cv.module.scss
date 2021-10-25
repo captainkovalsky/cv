@@ -15,6 +15,10 @@
 
     .avatar {
       max-width: 320px;
+
+      &__small {
+        max-width: 160px;
+      }
     }
 
     .links {

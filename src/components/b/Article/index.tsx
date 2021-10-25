@@ -26,7 +26,7 @@ export function Article({ title, className = "", children }: ArticleProps) {
   return (
     <div
       className={cls(styles.root, className, {
-        [styles.__small]: breakpoint.isLandscape || breakpoint.lessThan("md"),
+        [styles.__small]: breakpoint.lessThan("md"),
       })}
       data-testid={"article"}
     >

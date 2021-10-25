@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { createPortal } from "react-dom";
+import classNames from "classnames";
 import Button from "components/a/Button";
 import Company from "components/a/Company";
 import CvTitle from "components/a/CvTitle";
@@ -8,9 +9,9 @@ import IconStack from "components/a/IconStack";
 import Avatar from "components/a/Avatar";
 import Article from "components/b/Article";
 import cv from "data/cv";
-import styles from "./cv.module.scss";
-import classNames from "classnames";
 import ContactLink from "components/b/ContactLink";
+import styles from "./cv.module.scss";
+import { useBreakpoints } from "../../hooks/useBreakpoints";
 
 const ToNavigationPortal = (props: any) => {
   const { children } = props;
@@ -24,6 +25,7 @@ const ToNavigationPortal = (props: any) => {
 
 export default function CvPage() {
   const { experience, summary, avatar, contacts } = cv;
+  const breakpoint = useBreakpoints();
 
   return (
     <div className={styles.root}>
@@ -41,7 +43,12 @@ export default function CvPage() {
         </Button>
       </ToNavigationPortal>
       <div className={classNames(styles.contacts)}>
-        <Avatar src={avatar} className={styles.avatar} />
+        <Avatar
+          src={avatar}
+          className={classNames(styles.avatar, {
+            [styles.avatar__small]: breakpoint.lessThan("md"),
+          })}
+        />
         <ContactLink contacts={contacts} className={styles.links} />
       </div>
       <div className={styles.wrapper}>
