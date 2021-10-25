@@ -1,6 +1,7 @@
 const cv = {
   name: "Viktor",
   surname: "Dzundza",
+  avatar: "//avatars.githubusercontent.com/u/845156?v=4",
   contacts: {
     skype: "victor.dzundza",
     phone: "+380935481884",
@@ -10,9 +11,9 @@ const cv = {
   },
   summary: [
     "I've been working as web Engineer since 2012",
-    " Developed the projects with different areas such as E-Commerce, online training system,nTicketing system etc.n        ",
-    " Experienced in front end development technologies including advanced HTML5, CSS3, JavaScript (cross-browser compatibility, AJAX)n        ",
-    " Opened for new ideas and approaches in development, also I agree to use modern web frameworks such as Vue, dojo2.n        ",
+    " Developed the projects with different areas such as E-Commerce, online training system,nTicketing system etc.",
+    " Experienced in front end development technologies including advanced HTML5, CSS3, JavaScript (cross-browser compatibility, AJAX)",
+    " Opened for new ideas and approaches in development, also I agree to use modern web frameworks such as Vue, dojo2.",
     " Self-motivated; able to learn on own initiative",
   ],
   experience: [

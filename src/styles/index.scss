@@ -23,6 +23,8 @@ body.dark-theme {
   --menu-active-bg-color: #{$gray-light};
   --menu-bottom-color: #{$menu-bottom-dark-color};
   --menu-active-text-color: #{$black-color};
+
+  --avatar-border-color: #{$violet-color};
 }
 
 body.light-theme {
@@ -36,6 +38,12 @@ body.light-theme {
   --menu-active-bg-color: #{$violet-color};
   --menu-bottom-color: #{$menu-bottom-color};
   --menu-active-text-color: #{$white-color};
+
+  --avatar-border-color: #{$black-color};
+
+  --skype-icon-color-theme: #{$blue-color};
+  --linkedin-icon-color-theme: #{$blue-color};
+  --phone-icon-color-theme: #{$green-color};
 }
 
 @media screen {

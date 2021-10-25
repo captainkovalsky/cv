@@ -1,0 +1,21 @@
+.root {
+  .icon {
+    padding: 3px;
+    vertical-align: middle;
+    & > a {
+      color: inherit;
+    }
+
+    &__skype {
+      color: var(--skype-icon-color-theme) !important;
+    }
+
+    &__phone {
+      color: var(--phone-icon-color-theme) !important;
+    }
+
+    &__linkedin {
+      color: var(--linkedin-icon-color-theme) !important;
+    }
+  }
+}

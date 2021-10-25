@@ -1,13 +1,16 @@
+import { Fragment } from "react";
+import { createPortal } from "react-dom";
 import Button from "components/a/Button";
 import Company from "components/a/Company";
 import CvTitle from "components/a/CvTitle";
 import DateCmp from "components/a/DateCmp";
 import IconStack from "components/a/IconStack";
+import Avatar from "components/a/Avatar";
 import Article from "components/b/Article";
 import cv from "data/cv";
-import { Fragment } from "react";
-import { createPortal } from "react-dom";
 import styles from "./cv.module.scss";
+import classNames from "classnames";
+import ContactLink from "components/b/ContactLink";
 
 const ToNavigationPortal = (props: any) => {
   const { children } = props;
@@ -20,7 +23,8 @@ const ToNavigationPortal = (props: any) => {
 };
 
 export default function CvPage() {
-  const experience = cv.experience;
+  const { experience, summary, avatar, contacts } = cv;
+
   return (
     <div className={styles.root}>
       <ToNavigationPortal>
@@ -36,7 +40,20 @@ export default function CvPage() {
           Print PDF
         </Button>
       </ToNavigationPortal>
+      <div className={classNames(styles.contacts)}>
+        <Avatar src={avatar} className={styles.avatar} />
+        <ContactLink contacts={contacts} className={styles.links} />
+      </div>
       <div className={styles.wrapper}>
+        <h2>Summary</h2>
+        {summary.map((s, index) => (
+          <Fragment key={index}>
+            <p>{s}</p>
+          </Fragment>
+        ))}
+      </div>
+      <div className={styles.wrapper}>
+        <h2>Work Experience</h2>
         {experience.map((exp: any, index: number) => {
           return (
             <Fragment key={index}>
