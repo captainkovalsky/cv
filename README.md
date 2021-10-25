@@ -4,6 +4,6 @@
 
 ## Sites
 
-[Dev website](//cv-oayvp.ondigitalocean.app/about)
+[Dev website](//cv-oayvp.ondigitalocean.app)
 
 [Public website](//vdzundza.online)
