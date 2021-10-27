@@ -1,4 +1,3 @@
-import React from "react";
 import { RouterProvider } from "react-router5";
 import ReactDOM from "react-dom";
 import router from "./router";

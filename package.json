@@ -13,22 +13,29 @@
     "router5": "8.0.1",
     "router5-helpers": "^8.0.0",
     "router5-plugin-browser": "^8.0.1",
-    "typescript": "4.4.3",
+    "typescript": "^4.4.4",
     "web-vitals": "2.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "yarn lint && yarn test:ci",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:ci": "yarn test --watchAll=false --maxWorkers=1;",
     "eject": "react-scripts eject",
     "fmt": "yarn prettier ./ --write --ignore-path ./.gitignore",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx --max-warnings 0",
     "build:next": "node esbuild.mjs"
   },
   "eslintConfig": {
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "rules": {
+      "react/jsx-uses-react": "off",
+      "react/react-in-jsx-scope": "off"
+    }
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [

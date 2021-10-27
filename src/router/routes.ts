@@ -1,6 +1,5 @@
 const routes = [
   { name: "about", path: "/about" },
-  // { name: "consulting", path: "/consulting" },
   {
     name: "cv",
     path: "/cv",
@@ -10,7 +9,6 @@ const routes = [
       { name: "faq", path: "/faq" },
     ],
   },
-  // { name: "contacts", path: "/contacts" },
 ];
 
 export const defaultRoute = "about";

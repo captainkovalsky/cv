@@ -49,7 +49,6 @@ const Navigation: FC = () => {
           />
         </div>
       </nav>
-      <div className={"sub-route"}>sub route</div>
     </>
   );
 };
