@@ -1,57 +1,56 @@
 import { FC } from "react";
-import { State } from "router5";
-import { Link } from "react-router5";
-import { RouteDefinition } from "../../../router";
+import { BaseLink, useRoute } from "react-router5";
 import ToggleSwitch from "../../a/ToggleSwitch";
 import useTheme from "../../../hooks/useTheme";
 
 import styles from "./navigation.module.scss";
 
-type NavigationProps = {
-  activeRoute: State;
-  routes: RouteDefinition[];
-};
-
-const Navigation: FC<NavigationProps> = ({ activeRoute, routes }) => {
+const Navigation: FC = () => {
+  const { router } = useRoute();
   const { setTheme, theme } = useTheme();
   return (
-    <nav className={styles.root} data-no-print>
-      {routes
-        .filter((r) => r.visible !== false)
-        .map((r: RouteDefinition): JSX.Element => {
-          return (
-            <Link
-              key={r.name}
-              routeName={r.name}
-              className={styles.item}
-              activeClassName={styles.active}
-            >
-              {r.name}
-            </Link>
-          );
-        })}
-      <div
-        style={{
-          position: "absolute",
-          right: "1rem",
-          top: "0.75rem",
-        }}
-      >
-        <ToggleSwitch
-          rounded={true}
-          value={theme === "dark"}
-          onContent={() => <span>🌜</span>}
-          offContent={() => <span>🌞</span>}
-          onChange={(checked) => {
-            if (checked) {
-              setTheme("dark");
-            } else {
-              setTheme("light");
-            }
+    <>
+      <nav className={styles.root} data-no-print>
+        <BaseLink
+          router={router}
+          routeName={"about"}
+          className={styles.item}
+          activeClassName={styles.active}
+        >
+          About
+        </BaseLink>
+        <BaseLink
+          router={router}
+          routeName={"cv"}
+          className={styles.item}
+          activeClassName={styles.active}
+        >
+          CV
+        </BaseLink>
+        <div
+          style={{
+            position: "absolute",
+            right: "1rem",
+            top: "0.75rem",
           }}
-        />
-      </div>
-    </nav>
+        >
+          <ToggleSwitch
+            rounded={true}
+            value={theme === "dark"}
+            onContent={() => <span>🌜</span>}
+            offContent={() => <span>🌞</span>}
+            onChange={(checked) => {
+              if (checked) {
+                setTheme("dark");
+              } else {
+                setTheme("light");
+              }
+            }}
+          />
+        </div>
+      </nav>
+      <div className={"sub-route"}>sub route</div>
+    </>
   );
 };
 
