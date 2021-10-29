@@ -1,6 +1,7 @@
 FROM node:latest as builder
 LABEL maintainer="Viktor Dzundza <vdzundza@protonmain.com>"
 ENV NODE_ENV=production
+ENV NODE_OPTIONS=--openssl-legacy-provider
 WORKDIR /app
 COPY . ./ 
 RUN yarn -v
