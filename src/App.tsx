@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
-import { useRouteNode } from "react-router5";
+import {
+  BrowserRouter as Router,
+  Redirect,
+  Route,
+  Switch,
+} from "react-router-dom";
+
 import Navigation from "./components/b/Navigation";
 import CvPage from "./pages/cv";
 import AboutPage from "./pages/about";
@@ -9,9 +15,6 @@ import "./styles/index.scss";
 import styles from "./App.module.scss";
 
 function App() {
-  const { route } = useRouteNode("");
-  const topRouteName = route.name.split(".")[0];
-
   const [theme, setTheme] = useState<string>(
     localStorage.getItem("theme") ?? "dark"
   );
@@ -33,17 +36,29 @@ function App() {
         },
       }}
     >
-      <div
-        id="navigation-portal"
-        style={{
-          position: "absolute",
-        }}
-      />
-      <Navigation />
-      <main className={styles.container}>
-        {topRouteName === "about" && <AboutPage />}
-        {topRouteName === "cv" && <CvPage />}
-      </main>
+      <Router>
+        <div
+          id="navigation-portal"
+          style={{
+            position: "absolute",
+          }}
+        />
+        <Navigation />
+        <main className={styles.container}>
+          <Switch>
+            <Route path="/cv">
+              <CvPage />
+            </Route>
+            <Route path="/about">
+              <AboutPage />
+            </Route>
+
+            <Route path="*">
+              <Redirect to={"/about"} />
+            </Route>
+          </Switch>
+        </main>
+      </Router>
     </ThemeContext.Provider>
   );
 }

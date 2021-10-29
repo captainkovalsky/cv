@@ -1,32 +1,29 @@
 import { FC } from "react";
-import { BaseLink, useRoute } from "react-router5";
+import { NavLink } from "react-router-dom";
 import ToggleSwitch from "../../a/ToggleSwitch";
 import useTheme from "../../../hooks/useTheme";
 
 import styles from "./navigation.module.scss";
 
 const Navigation: FC = () => {
-  const { router } = useRoute();
   const { setTheme, theme } = useTheme();
   return (
     <>
       <nav className={styles.root} data-no-print>
-        <BaseLink
-          router={router}
-          routeName={"about"}
-          className={styles.item}
+        <NavLink
+          to={"/about"}
           activeClassName={styles.active}
+          className={styles.item}
         >
           About
-        </BaseLink>
-        <BaseLink
-          router={router}
-          routeName={"cv"}
-          className={styles.item}
+        </NavLink>
+        <NavLink
+          to={"/cv"}
           activeClassName={styles.active}
+          className={styles.item}
         >
           CV
-        </BaseLink>
+        </NavLink>
         <div
           style={{
             position: "absolute",
