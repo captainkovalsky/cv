@@ -15,7 +15,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "prebuild": "yarn lint && yarn test:ci",
+    "prebuild": "yarn lint",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "yarn test --watchAll=false --maxWorkers=1;",
