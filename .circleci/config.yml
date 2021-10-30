@@ -24,8 +24,7 @@ workflows:
           version: "16.10"
           pkg-manager: yarn
           yarn-run: build
-      - run:
-          command: |
-            echo "build docker archive"
-            echo docker -v
-            echo docker-compose -v
+
+      - docker/publish:
+          image: $CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME
+          update-description: true
