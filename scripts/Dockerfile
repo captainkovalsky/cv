@@ -1,13 +1,11 @@
-FROM node:latest as builder
+FROM alpine:latest as builder
 LABEL maintainer="Viktor Dzundza <vdzundza@protonmain.com>"
-ENV NODE_ENV=production
 WORKDIR /app
-COPY . ./ 
-RUN yarn -v
-RUN yarn install --production
-RUN yarn react-scripts --openssl-legacy-provider build
+COPY build ./html
+COPY nginx ./nginx
+RUN ls -la
 
 FROM nginx:alpine
 COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/build/ /usr/share/nginx/html
+COPY --from=builder /app/html/ /usr/share/nginx/html
 ENTRYPOINT ["nginx", "-g", "daemon off;"]
