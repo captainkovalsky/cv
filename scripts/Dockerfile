@@ -5,7 +5,7 @@ WORKDIR /app
 COPY . ./ 
 RUN yarn -v
 RUN yarn install --production
-RUN yarn build --openssl-legacy-provider
+RUN yarn react-scripts --openssl-legacy-provider build
 
 FROM nginx:alpine
 COPY --from=builder /app/nginx/nginx.conf /etc/nginx/conf.d/default.conf
